@@ -355,7 +355,16 @@ main{position:relative;z-index:10}
   cursor:pointer;z-index:24;
   transition:transform .35s var(--spring);
 }
-.av-node:hover{transform:translateY(-8px) scale(1.03)!important}
+.av-founder:hover,
+.av-manufacturer:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+}
+.av-investor {
+  cursor: default;
+}
+.av-investor:hover {
+  transform: translateX(-50%) !important; 
+}
 .av-node:focus-visible{outline:2px solid var(--mint);outline-offset:10px;border-radius:20px}
 
 /* Triangle layout */
