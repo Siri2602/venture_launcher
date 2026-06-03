@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Venture Launcher — Where Founders Meet Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<canvas id="bgCanvas" aria-hidden="true"></canvas>
+<div class="cursor-dot" id="cDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cRing" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="mainNav" role="navigation" aria-label="Main navigation">
+  <a href="#" class="nav-brand" aria-label="Venture Launcher">
+    <div class="brand-icon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <polygon points="14,2 26,24 2,24" stroke="#00FFD1" stroke-width="1.5" fill="none"/>
+        <polygon points="14,8 22,22 6,22" fill="#00FFD1" opacity="0.12"/>
+        <circle cx="14" cy="14" r="2.2" fill="#00FFD1"/>
+      </svg>
+    </div>
+    <span class="brand-text">VENTURE<span class="brand-accent">LAUNCHER</span></span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="#ecosystem">Ecosystem</a></li>
+    <li><a href="#avatars">Avatars</a></li>
+    <li><a href="#matchmaking">Match</a></li>
+    <li><a href="#network">Network</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="#" class="btn-ghost-nav">Sign In</a>
+    <a href="#cta" class="btn-primary-nav">
+      Get Early Access
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" hidden>
+  <ul role="list">
+    <li><a href="#ecosystem">Ecosystem</a></li>
+    <li><a href="#avatars">Avatars</a></li>
+    <li><a href="#matchmaking">Match</a></li>
+    <li><a href="#network">Network</a></li>
+    <li><a href="#cta" class="btn-primary-nav" style="display:inline-flex;margin-top:10px">Get Early Access</a></li>
+  </ul>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════
+     01 · HERO
+══════════════════════════════════════════════════ -->
+<section id="hero" class="hero">
+  <div class="hero-line hero-line-l" aria-hidden="true"></div>
+  <div class="hero-line hero-line-r" aria-hidden="true"></div>
+
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <span>FOUNDERS</span><span class="tick-sep">◆</span>
+      <span>INVESTORS</span><span class="tick-sep">◆</span>
+      <span>MANUFACTURERS</span><span class="tick-sep">◆</span>
+      <span>AI MATCHING</span><span class="tick-sep">◆</span>
+      <span>SEED STAGE</span><span class="tick-sep">◆</span>
+      <span>SERIES A</span><span class="tick-sep">◆</span>
+      <span>DEEP TECH</span><span class="tick-sep">◆</span>
+      <span>FINTECH</span><span class="tick-sep">◆</span>
+      <span>FOUNDERS</span><span class="tick-sep">◆</span>
+      <span>INVESTORS</span><span class="tick-sep">◆</span>
+      <span>MANUFACTURERS</span><span class="tick-sep">◆</span>
+      <span>AI MATCHING</span><span class="tick-sep">◆</span>
+      <span>SEED STAGE</span><span class="tick-sep">◆</span>
+      <span>SERIES A</span><span class="tick-sep">◆</span>
+      <span>DEEP TECH</span><span class="tick-sep">◆</span>
+      <span>FINTECH</span><span class="tick-sep">◆</span>
+    </div>
+  </div>
+
+  <div class="hero-inner">
+
+    <!-- Copy -->
+    <div class="hero-copy">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-pill">● LIVE BETA</span>
+        <span class="eyebrow-stat">2,400+ founders onboarded</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="ht-line"><span class="ht-inner">WHERE</span></span>
+        <span class="ht-line accent-mint"><span class="ht-inner">FOUNDERS</span></span>
+        <span class="ht-line"><span class="ht-inner">MEET</span></span>
+        <span class="ht-line accent-gold"><span class="ht-inner">CAPITAL</span></span>
+      </h1>
+      <p class="hero-desc">
+        An AI-powered ecosystem of 3D avatars connecting<br>
+        startups, investors, and manufacturers — in real time.
+      </p>
+      <div class="hero-ctas">
+        <a href="#cta" class="btn-launch magnetic" id="launchBtn">
+          <span class="btn-launch-bg" aria-hidden="true"></span>
+          <span>Launch My Startup</span>
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 9h12M9 3l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#ecosystem" class="btn-explore">
+          <span>Explore Ecosystem</span>
+          <span class="btn-explore-line" aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="hero-stats" role="list" aria-label="Platform stats">
+        <div class="stat-item" role="listitem">
+          <div style="display:flex;align-items:baseline;gap:2px">
+            <span class="stat-num" data-target="2400">0</span><span class="stat-suf">+</span>
+          </div>
+          <span class="stat-lbl">Founders</span>
+        </div>
+        <div class="stat-div" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <div style="display:flex;align-items:baseline;gap:2px">
+            <span class="stat-num" data-target="840">0</span><span class="stat-suf">+</span>
+          </div>
+          <span class="stat-lbl">Investors</span>
+        </div>
+        <div class="stat-div" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <div style="display:flex;align-items:baseline;gap:2px">
+            <span class="stat-num" data-target="320">0</span><span class="stat-suf">+</span>
+          </div>
+          <span class="stat-lbl">Manufacturers</span>
+        </div>
+        <div class="stat-div" aria-hidden="true"></div>
+        <div class="stat-item" role="listitem">
+          <div style="display:flex;align-items:baseline;gap:2px">
+            <span class="stat-num" data-target="1200">0</span><span class="stat-suf">Cr+</span>
+          </div>
+          <span class="stat-lbl">Deals Closed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avatar Stage -->
+    <div class="hero-stage" id="heroStage">
+      <!-- SVG connection lines -->
+      <svg class="stage-svg" viewBox="0 0 500 520" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFD166" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#00FFD1" stop-opacity=".9"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#00FFD1" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#4ADE80" stop-opacity=".9"/>
+          </linearGradient>
+          <linearGradient id="lg3" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#4ADE80" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#FFD166" stop-opacity=".9"/>
+          </linearGradient>
+          <filter id="gf"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <line x1="250" y1="50" x2="440" y2="430" stroke="url(#lg1)" stroke-width="1.2" filter="url(#gf)" opacity=".7"/>
+        <line x1="440" y1="430" x2="60"  y2="430" stroke="url(#lg2)" stroke-width="1.2" filter="url(#gf)" opacity=".7"/>
+        <line x1="60"  y1="430" x2="250" y2="50"  stroke="url(#lg3)" stroke-width="1.2" filter="url(#gf)" opacity=".7"/>
+        <circle r="4.5" fill="#FFD166" opacity=".9" filter="url(#gf)">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M250,50 L440,430"/>
+        </circle>
+        <circle r="4" fill="#00FFD1" opacity=".9" filter="url(#gf)">
+          <animateMotion dur="3.5s" begin="1s" repeatCount="indefinite" path="M440,430 L60,430"/>
+        </circle>
+        <circle r="4" fill="#4ADE80" opacity=".9" filter="url(#gf)">
+          <animateMotion dur="4s" begin="2s" repeatCount="indefinite" path="M60,430 L250,50"/>
+        </circle>
+      </svg>
+
+      <!-- INVESTOR avatar — top -->
+      <div class="av-node av-investor" id="avInvestor" data-role="investor" tabindex="0" role="button" aria-label="Investor avatar">
+        <div class="av-aura" style="--aura-c:#FFD166" aria-hidden="true"></div>
+        <div class="av-frame gold-border">
+          <img id="img-hero-investor" class="av-img" alt="3D Investor avatar" loading="eager"/>
+        </div>
+        <div class="av-chip" style="--chip-c:#FFD166;--chip-bg:rgba(255,209,102,.1)">
+          <span class="chip-dot" style="background:#FFD166"></span>INVESTOR
+        </div>
+      </div>
+
+      <!-- FOUNDER avatar — bottom left -->
+      <div class="av-node av-founder" id="avFounder" data-role="founder" tabindex="0" role="button" aria-label="Founder avatar">
+        <div class="av-aura" style="--aura-c:#00FFD1" aria-hidden="true"></div>
+        <div class="av-frame mint-border">
+          <img id="img-hero-founder" class="av-img" alt="3D Founder avatar" loading="eager"/>
+        </div>
+        <div class="av-chip" style="--chip-c:#00FFD1;--chip-bg:rgba(0,255,209,.1)">
+          <span class="chip-dot" style="background:#00FFD1"></span>FOUNDER
+        </div>
+        <div class="float-card">
+          <div class="fc-top">
+            <span class="fc-emoji">🚀</span>
+            <div><strong>NexusAI</strong><em>Fintech · Seed · ₹2Cr</em></div>
+          </div>
+          <div class="fc-score"><span>AI Score</span><strong class="fc-pct">96%</strong></div>
+        </div>
+      </div>
+
+      <!-- MANUFACTURER avatar — bottom right -->
+      <div class="av-node av-manufacturer" id="avManufacturer" data-role="manufacturer" tabindex="0" role="button" aria-label="Manufacturer avatar">
+        <div class="av-aura" style="--aura-c:#4ADE80" aria-hidden="true"></div>
+        <div class="av-frame green-border">
+          <img id="img-hero-manufacturer" class="av-img" alt="3D Manufacturer avatar" loading="eager"/>
+        </div>
+        <div class="av-chip" style="--chip-c:#4ADE80;--chip-bg:rgba(74,222,128,.1)">
+          <span class="chip-dot" style="background:#4ADE80"></span>MAKER
+        </div>
+      </div>
+    </div>
+
+  </div><!-- hero-inner -->
+
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     02 · ECOSYSTEM
+══════════════════════════════════════════════════ -->
+<section id="ecosystem" class="section">
+  <div class="wrap">
+    <div class="section-head" data-rev>
+      <span class="kicker">◆ THE ECOSYSTEM</span>
+      <h2 class="section-title">One Platform.<br><em>Three Superpowers.</em></h2>
+      <p class="section-sub">Not a dashboard — an intelligent venture cockpit built for how you actually work.</p>
+    </div>
+    <div class="eco-grid">
+
+      <article class="eco-card" data-rev data-delay="0">
+        <div class="eco-num" aria-hidden="true">01</div>
+        <div class="eco-av-wrap">
+          <div class="eco-glow" style="--gc:#00FFD1" aria-hidden="true"></div>
+          <img id="img-eco-founder" class="eco-av-img" alt="3D Founder avatar" loading="lazy"/>
+        </div>
+        <div class="eco-body">
+          <div class="eco-role" style="color:#00FFD1">FOUNDER</div>
+          <h3>Build. Pitch.<br>Launch.</h3>
+          <p>Your AI avatar presents your startup 24/7. Investors engage with your digital twin while you focus on building.</p>
+          <ul class="eco-list">
+            <li><span>→</span>AI Pitch Generator</li>
+            <li><span>→</span>Investor Match Scores</li>
+            <li><span>→</span>Avatar-Led Onboarding</li>
+            <li><span>→</span>Founder Cockpit Dashboard</li>
+          </ul>
+        </div>
+        <div class="eco-bar" style="--bar:#00FFD1" aria-hidden="true"></div>
+      </article>
+
+      <article class="eco-card" data-rev data-delay="110">
+        <div class="eco-num" aria-hidden="true">02</div>
+        <div class="eco-av-wrap">
+          <div class="eco-glow" style="--gc:#FFD166" aria-hidden="true"></div>
+          <img id="img-eco-investor" class="eco-av-img" alt="3D Investor avatar" loading="lazy"/>
+        </div>
+        <div class="eco-body">
+          <div class="eco-role" style="color:#FFD166">INVESTOR</div>
+          <h3>Discover. Analyse.<br>Invest.</h3>
+          <p>AI curates deal flow matched to your exact thesis. Ask anything — the startup's avatar answers instantly.</p>
+          <ul class="eco-list">
+            <li><span>→</span>AI Deal Discovery</li>
+            <li><span>→</span>Live Startup Q&A</li>
+            <li><span>→</span>Automated Due Diligence</li>
+            <li><span>→</span>Co-Investor Network</li>
+          </ul>
+        </div>
+        <div class="eco-bar" style="--bar:#FFD166" aria-hidden="true"></div>
+      </article>
+
+      <article class="eco-card eco-maker-card" data-rev data-delay="220">
+        <div class="eco-num" aria-hidden="true">03</div>
+        <div class="eco-av-wrap">
+          <div class="eco-glow" style="--gc:#4ADE80" aria-hidden="true"></div>
+          <img id="img-eco-manufacturer" class="eco-av-img" alt="3D Manufacturer avatar" loading="lazy"/>
+        </div>
+        <div class="eco-body">
+          <div class="eco-role" style="color:#4ADE80">MANUFACTURER</div>
+          <h3>Connect. Quote.<br>Scale.</h3>
+          <p>Startups bring product briefs. AI matches capabilities to demand — quotes and contracts scaffolded automatically.</p>
+          <ul class="eco-list">
+            <li><span>→</span>AI Capability Matching</li>
+            <li><span>→</span>Blueprint Collaboration</li>
+            <li><span>→</span>Automated Quoting</li>
+            <li><span>→</span>Production Analytics</li>
+          </ul>
+        </div>
+        <div class="eco-bar" style="--bar:#4ADE80" aria-hidden="true"></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     03 · AVATAR DEMO
+══════════════════════════════════════════════════ -->
+<section id="avatars" class="section">
+  <div class="wrap">
+    <div class="section-head" data-rev>
+      <span class="kicker" style="color:#00FFD1;border-color:rgba(0,255,209,.2)">◆ AVATAR SYSTEM</span>
+      <h2 class="section-title">Your Avatar is<br><em>Always Working</em></h2>
+      <p class="section-sub">While you sleep, your 3D avatar presents your startup and builds relationships 24/7.</p>
+    </div>
+    <div class="av-demo" data-rev>
+
+      <!-- Left: Founder -->
+      <div class="demo-panel panel-left">
+        <div class="demo-av-wrap">
+          <div class="demo-halo" style="--hc:#00FFD1" aria-hidden="true"></div>
+          <img id="img-demo-founder" class="demo-av-img" alt="Founder avatar presenting" loading="lazy"/>
+          <div class="demo-status">
+            <span class="status-dot" style="background:#00FFD1"></span>Avatar Active
+          </div>
+        </div>
+        <div class="demo-card">
+          <div class="dc-head">
+            <span class="dc-ico">◈</span>
+            <div><strong>NexusAI</strong><em>Fintech · Seed · ₹2Cr SAFE</em></div>
+          </div>
+          <div class="dc-metrics">
+            <div class="dcm"><span>MRR</span><strong style="color:#4ADE80">₹12.4L</strong></div>
+            <div class="dcm"><span>Growth</span><strong style="color:#00FFD1">34% MoM</strong></div>
+            <div class="dcm"><span>Match</span><strong style="color:#FFD166">96%</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Live Chat -->
+      <div class="demo-chat">
+        <div class="chat-topbar">
+          <div class="cav">
+            <img id="img-chat-inv" alt="Investor Ravi Kapoor" loading="lazy"/>
+          </div>
+          <div class="ctb-info">
+            <strong>Ravi Kapoor</strong>
+            <em>Angel · Fintech Focus</em>
+          </div>
+          <div class="ctb-badge">AI-POWERED Q&amp;A</div>
+        </div>
+        <div class="chat-msgs" id="chatMsgs" role="log" aria-live="polite"></div>
+        <div class="chat-bar">
+          <input type="text" class="chat-in" placeholder="Ask the startup anything…" readonly aria-label="Chat input"/>
+          <button class="chat-send" aria-label="Send">↑</button>
+        </div>
+      </div>
+
+      <!-- Right: Investor -->
+      <div class="demo-panel panel-right">
+        <div class="demo-av-wrap">
+          <div class="demo-halo" style="--hc:#FFD166" aria-hidden="true"></div>
+          <img id="img-demo-investor" class="demo-av-img" alt="Investor avatar reviewing deal" loading="lazy"/>
+          <div class="demo-status" style="color:#FFD166;background:rgba(255,209,102,.06);border-color:rgba(255,209,102,.2)">
+            <span class="status-dot" style="background:#FFD166"></span>Reviewing Deal
+          </div>
+        </div>
+        <div class="demo-insight">
+          <div class="di-lbl">🤖 AI Insight</div>
+          <p>Ravi asked <strong>7 questions</strong> — 3× platform average. Intro probability: <strong style="color:#FFD166">87%</strong>. Recommend live room now.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     04 · AI MATCHMAKING
+══════════════════════════════════════════════════ -->
+<section id="matchmaking" class="section">
+  <div class="wrap">
+    <div class="section-head" data-rev>
+      <span class="kicker" style="color:#FFD166;border-color:rgba(255,209,102,.2)">◆ AI MATCHMAKING ENGINE</span>
+      <h2 class="section-title">Precision Matching,<br><em>Not Just Filtering</em></h2>
+      <p class="section-sub">12-dimensional AI scoring surfaces the right connections at the right moment.</p>
+    </div>
+    <div class="match-arena" data-rev>
+      <!-- Founder node -->
+      <div class="match-node">
+        <div class="mn-orbit" aria-hidden="true">
+          <div class="mn-ring r1"></div>
+          <div class="mn-ring r2"></div>
+        </div>
+        <div class="mn-face">
+          <img id="img-match-founder" alt="Founder" loading="lazy"/>
+        </div>
+        <div class="mn-tag" style="color:#00FFD1">FOUNDER</div>
+        <div class="mn-name">NexusAI</div>
+      </div>
+
+      <!-- Core score -->
+      <div class="match-core">
+        <div class="score-orb" id="scoreOrb">
+          <svg class="orb-svg" viewBox="0 0 160 160" aria-hidden="true">
+            <circle cx="80" cy="80" r="70" fill="none" stroke="rgba(0,255,209,.07)" stroke-width="1"/>
+            <circle cx="80" cy="80" r="54" fill="none" stroke="rgba(255,209,102,.07)" stroke-width="1"/>
+            <circle class="spin-cw"  cx="80" cy="80" r="70" fill="none" stroke="rgba(0,255,209,.3)"   stroke-width="1.5" stroke-dasharray="12 430"/>
+            <circle class="spin-ccw" cx="80" cy="80" r="54" fill="none" stroke="rgba(255,209,102,.3)" stroke-width="1"   stroke-dasharray="8 340"/>
+          </svg>
+          <div class="orb-inner" aria-label="96% match score">
+            <span class="orb-num" data-target="96">0</span>
+            <span class="orb-pct">%</span>
+            <span class="orb-lbl">MATCH</span>
+          </div>
+        </div>
+        <div class="match-bars" role="list" aria-label="Match dimensions">
+          <div class="mb-row" role="listitem">
+            <span class="mb-name">Thesis Fit</span>
+            <div class="mb-track"><div class="mb-fill" style="--fw:98%;--fc:#00FFD1"></div></div>
+            <span class="mb-val">98</span>
+          </div>
+          <div class="mb-row" role="listitem">
+            <span class="mb-name">Stage Align</span>
+            <div class="mb-track"><div class="mb-fill" style="--fw:95%;--fc:#4ADE80"></div></div>
+            <span class="mb-val">95</span>
+          </div>
+          <div class="mb-row" role="listitem">
+            <span class="mb-name">Geography</span>
+            <div class="mb-track"><div class="mb-fill" style="--fw:100%;--fc:#FFD166"></div></div>
+            <span class="mb-val">100</span>
+          </div>
+          <div class="mb-row" role="listitem">
+            <span class="mb-name">Traction</span>
+            <div class="mb-track"><div class="mb-fill" style="--fw:88%;--fc:#A78BFA"></div></div>
+            <span class="mb-val">88</span>
+          </div>
+          <div class="mb-row" role="listitem">
+            <span class="mb-name">Team Score</span>
+            <div class="mb-track"><div class="mb-fill" style="--fw:90%;--fc:#00FFD1"></div></div>
+            <span class="mb-val">90</span>
+          </div>
+          <div class="mb-row" role="listitem">
+            <span class="mb-name">Market Size</span>
+            <div class="mb-track"><div class="mb-fill" style="--fw:92%;--fc:#FFD166"></div></div>
+            <span class="mb-val">92</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Investor node -->
+      <div class="match-node">
+        <div class="mn-orbit" aria-hidden="true">
+          <div class="mn-ring r1" style="border-color:rgba(255,209,102,.3)"></div>
+          <div class="mn-ring r2" style="border-color:rgba(255,209,102,.14)"></div>
+        </div>
+        <div class="mn-face" style="border-color:rgba(255,209,102,.3)">
+          <img id="img-match-investor" alt="Investor" loading="lazy"/>
+        </div>
+        <div class="mn-tag" style="color:#FFD166">INVESTOR</div>
+        <div class="mn-name">Ravi Kapoor</div>
+      </div>
+
+      <!-- Animated connection line -->
+      <svg class="match-conn" viewBox="0 0 900 80" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="mcg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#00FFD1" stop-opacity=".6"/>
+            <stop offset="50%"  stop-color="#A78BFA" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#FFD166" stop-opacity=".6"/>
+          </linearGradient>
+        </defs>
+        <path d="M0,40 Q450,5 900,40" stroke="url(#mcg)" stroke-width="1.5" fill="none"/>
+        <circle r="5" fill="#00FFD1"><animateMotion dur="2.4s" repeatCount="indefinite" path="M0,40 Q450,5 900,40"/></circle>
+        <circle r="4" fill="#FFD166"><animateMotion dur="2.4s" begin="1.2s" repeatCount="indefinite" path="M900,40 Q450,75 0,40"/></circle>
+      </svg>
+    </div>
+
+    <!-- Match list -->
+    <div class="match-list" data-rev>
+      <div class="ml-head">
+        <span>Top Matches for NexusAI</span>
+        <span class="ml-count">14 matches found</span>
+      </div>
+      <div class="ml-row">
+        <div class="mlr-av"><img id="img-ml-inv1" alt="Investor 1" loading="lazy"/></div>
+        <div class="mlr-info"><strong>Ravi Kapoor</strong><em>Fintech · ₹50L–2Cr · Mumbai</em></div>
+        <div class="mlr-score" style="color:#4ADE80">96%</div>
+        <button class="mlr-btn connect-btn">Connect</button>
+      </div>
+      <div class="ml-row">
+        <div class="mlr-av"><img id="img-ml-inv2" alt="Investor 2" loading="lazy"/></div>
+        <div class="mlr-info"><strong>Sarah Chen Ventures</strong><em>AI/ML · Seed · Global</em></div>
+        <div class="mlr-score" style="color:#00FFD1">91%</div>
+        <button class="mlr-btn connect-btn">Connect</button>
+      </div>
+      <div class="ml-row">
+        <div class="mlr-av"><img id="img-ml-inv3" alt="Investor 3" loading="lazy"/></div>
+        <div class="mlr-info"><strong>Delta Capital Partners</strong><em>B2B SaaS · Series A</em></div>
+        <div class="mlr-score" style="color:#FFD166">88%</div>
+        <button class="mlr-btn connect-btn">Connect</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     05 · NETWORK ROOM
+══════════════════════════════════════════════════ -->
+<section id="network" class="section">
+  <div class="wrap">
+    <div class="section-head" data-rev>
+      <span class="kicker" style="color:#4ADE80;border-color:rgba(74,222,128,.2)">◆ VIRTUAL NETWORKING</span>
+      <h2 class="section-title">The Future of<br><em>Venture Networking</em></h2>
+      <p class="section-sub">Avatar-based rooms where founders pitch, investors evaluate, and manufacturers collaborate — borderless.</p>
+    </div>
+    <div class="room-shell" data-rev>
+      <div class="room-topbar">
+        <div class="rtb-l">
+          <div class="live-dot" aria-hidden="true"></div>
+          <span class="room-label">Fintech Founders Weekly</span>
+          <span class="room-pax">8 participants</span>
+        </div>
+        <div class="rtb-r">
+          <span class="rbadge live">LIVE</span>
+          <span class="rbadge ai">AI HOST ACTIVE</span>
+        </div>
+      </div>
+      <div class="room-stage">
+        <div class="room-grid" aria-hidden="true"></div>
+        <div class="room-center-glow" aria-hidden="true"></div>
+
+        <div class="rp speaking" style="--rx:8%;--ry:20%">
+          <div class="rp-frame">
+            <img id="img-room-founder" alt="Founder Alex M. presenting" loading="lazy"/>
+          </div>
+          <div class="rp-name">Alex M.</div>
+          <div class="rp-role" style="color:#00FFD1">FOUNDER</div>
+          <div class="speaking-ring" aria-hidden="true"></div>
+        </div>
+
+        <div class="rp" style="--rx:60%;--ry:12%">
+          <div class="rp-frame" style="border-color:rgba(255,209,102,.35)">
+            <img id="img-room-investor1" alt="Investor Ravi K." loading="lazy"/>
+          </div>
+          <div class="rp-name">Ravi K.</div>
+          <div class="rp-role" style="color:#FFD166">INVESTOR</div>
+        </div>
+
+        <div class="rp" style="--rx:38%;--ry:50%">
+          <div class="rp-frame" style="border-color:rgba(74,222,128,.35)">
+            <img id="img-room-manufacturer" alt="Manufacturer TechForge" loading="lazy"/>
+          </div>
+          <div class="rp-name">TechForge</div>
+          <div class="rp-role" style="color:#4ADE80">MAKER</div>
+        </div>
+
+        <div class="rp" style="--rx:72%;--ry:48%">
+          <div class="rp-frame" style="border-color:rgba(255,209,102,.22)">
+            <img id="img-room-investor2" alt="Investor Sarah C." loading="lazy"/>
+          </div>
+          <div class="rp-name">Sarah C.</div>
+          <div class="rp-role" style="color:#FFD166">INVESTOR</div>
+        </div>
+
+        <div class="ai-bar" role="status">
+          <span aria-hidden="true">🤖</span>
+          <span><em>AI Host:</em> "Alex Mehta is presenting NexusAI. Investors may queue questions via AI chat."</span>
+        </div>
+
+        <div class="room-ctrls" role="toolbar" aria-label="Room controls">
+          <button class="rc" aria-label="Mic">🎤</button>
+          <button class="rc" aria-label="Camera">📷</button>
+          <button class="rc" aria-label="Chat">💬</button>
+          <button class="rc" aria-label="Hand">✋</button>
+          <button class="rc" aria-label="Screen">🖥️</button>
+          <button class="rc rc-end" aria-label="Leave">📵</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════
+     06 · CTA
+══════════════════════════════════════════════════ -->
+<section id="cta" class="section cta-section">
+  <div class="cta-bg-grid" aria-hidden="true"></div>
+  <div class="cta-radial" aria-hidden="true"></div>
+  <div class="cta-avatars" aria-hidden="true">
+    <img id="img-cta-founder"      class="cta-av" alt=""/>
+    <img id="img-cta-investor"     class="cta-av" alt=""/>
+    <img id="img-cta-manufacturer" class="cta-av" alt=""/>
+  </div>
+  <div class="cta-content" data-rev>
+    <span class="kicker">◆ JOIN THE ECOSYSTEM</span>
+    <h2 class="cta-title">
+      The Future of<br>
+      <span class="accent-mint">Venture Networking</span><br>
+      Starts Here
+    </h2>
+    <p class="cta-sub">Join 2,400+ founders, 840+ investors, and 320+ manufacturers already building the next generation of startups together.</p>
+    <div class="role-tabs" role="tablist" aria-label="Select your role">
+      <button class="role-tab active" data-role="founder" role="tab" aria-selected="true">I'm a Founder</button>
+      <button class="role-tab" data-role="investor" role="tab" aria-selected="false">I'm an Investor</button>
+      <button class="role-tab" data-role="manufacturer" role="tab" aria-selected="false">I'm a Manufacturer</button>
+    </div>
+    <a href="#" class="cta-btn magnetic" id="ctaBtn">
+      <span class="cta-btn-bg" aria-hidden="true"></span>
+      <span id="ctaBtnTxt">Launch as Founder</span>
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h14M10 3l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="cta-fine">Free during beta · No credit card · Avatar setup in 2 minutes</p>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <polygon points="14,2 26,24 2,24" stroke="#00FFD1" stroke-width="1.5" fill="none"/>
+            <circle cx="14" cy="14" r="2" fill="#00FFD1"/>
+          </svg>
+        </div>
+        <span class="brand-text">VENTURE<span class="brand-accent">LAUNCHER</span></span>
+      </div>
+      <p>The AI-powered venture ecosystem connecting founders, investors, and manufacturers through immersive 3D avatar experiences.</p>
+    </div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <strong>Platform</strong>
+        <a href="#">For Founders</a>
+        <a href="#">For Investors</a>
+        <a href="#">For Manufacturers</a>
+      </div>
+      <div class="footer-col">
+        <strong>Company</strong>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Careers</a>
+      </div>
+      <div class="footer-col">
+        <strong>Legal</strong>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Venture Launcher. All rights reserved.</span>
+    <span>Built for the future of startups.</span>
+  </div>
+</footer>
+
+<div class="toast-slot" id="toastSlot" role="status" aria-live="polite"></div>
+
+<!-- Avatar data (base64 embedded, no external requests) -->
+<script src="av.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
