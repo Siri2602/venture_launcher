@@ -1128,3 +1128,27 @@ section { position: relative; z-index: 10; }
     transform:translateY(0);
   }
 }
+.avatar-image:hover,
+.avatar:hover,
+[class*="avatar"]:hover,
+[class*="Avatar"]:hover {
+  transform: none !important;
+  transition: none !important;
+  top: auto !important;
+  left: auto !important;
+  position: relative !important;
+}
+*:hover {
+  transform: none !important;
+}
+.avatar-container:hover .avatar-image,
+.avatar-wrapper:hover img {
+  transform: none !important;
+  transition: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+img:hover {
+  transform: scale(1) !important;
+  translate: 0 0 !important;
+}
