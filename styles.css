@@ -1137,12 +1137,27 @@ section { position: relative; z-index: 10; }
     transform:translateY(0);
   }
 }
+av-node:hover {
+  transform: none !important;
+}
+
+.av-founder:hover,
+.av-manufacturer:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+}
+
+.av-investor {
+  cursor: default;
+}
+.av-investor:hover {
+  transform: translateX(-50%) !important; /* Retains its baseline center alignment */
+}
+
 .role-tab.active {
-  color: var(--bg);
-  background: var(--mint);
-  border-color: var(--mint);
+  color: var(--bg) !important;
   font-weight: 600;
 }
+
 .cta-btn {
   position: relative;
   display: inline-flex;
@@ -1161,17 +1176,20 @@ section { position: relative; z-index: 10; }
   cursor: pointer;
   border: none;
   
+  
   box-shadow: 0 4px 20px rgba(0, 255, 209, 0.15), 
               inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: transform .25s var(--spring), box-shadow .25s var(--ease);
 }
+
+
 .cta-btn-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--mint) 0%, #00e0b8 50%, #4ade80 100%); 
+  background: linear-gradient(135deg, var(--mint) 0%, #00e0b8 50%, #4ade80 100%) !important;
   z-index: 0;
-  transition: opacity 0.3s var(--ease);
 }
+
 .cta-btn:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(0, 255, 209, 0.35), 
@@ -1181,9 +1199,12 @@ section { position: relative; z-index: 10; }
 .cta-btn:active {
   transform: translateY(-1px);
 }
-.cta-btn svg {
+
+
+.cta-btn svg, 
+.cta-btn svg path {
   position: relative;
   z-index: 1;
-  stroke: var(--bg);
-  fill: var(--bg);
+  stroke: var(--bg) !important;
+  fill: transparent; 
 }
