@@ -1137,3 +1137,53 @@ section { position: relative; z-index: 10; }
     transform:translateY(0);
   }
 }
+.role-tab.active {
+  color: var(--bg);
+  background: var(--mint);
+  border-color: var(--mint);
+  font-weight: 600;
+}
+.cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 40px;
+  border-radius: var(--r-sm);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  color: var(--bg) !important; 
+  overflow: hidden;
+  isolation: isolate;
+  margin-bottom: 16px;
+  cursor: pointer;
+  border: none;
+  
+  box-shadow: 0 4px 20px rgba(0, 255, 209, 0.15), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform .25s var(--spring), box-shadow .25s var(--ease);
+}
+.cta-btn-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--mint) 0%, #00e0b8 50%, #4ade80 100%); 
+  z-index: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(0, 255, 209, 0.35), 
+              0 0 15px rgba(74, 222, 128, 0.2);
+}
+
+.cta-btn:active {
+  transform: translateY(-1px);
+}
+.cta-btn svg {
+  position: relative;
+  z-index: 1;
+  stroke: var(--bg);
+  fill: var(--bg);
+}
