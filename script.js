@@ -5,7 +5,7 @@
    ===================================================== */
 
 /* ── 1. INJECT AVATAR IMAGES ─────────────────────── */
-function injectAvatars() {
+function injectAvatars() { 
   const map = {
     'img-hero-investor':     AV.hero_investor,
     'img-hero-founder':      AV.hero_founder,
