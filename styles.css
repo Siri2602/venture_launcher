@@ -360,9 +360,29 @@ main{position:relative;z-index:10}
 .av-node:focus-visible{outline:2px solid var(--mint);outline-offset:10px;border-radius:20px}
 
 /* Triangle layout */
-.av-investor    {top:0%;left:50%;transform:translateX(-50%)}
-.av-founder     {bottom:2%;left:2%}
-.av-manufacturer{bottom:2%;right:2%}
+.av-investor{
+  top:0%;
+  left:50%;
+  transform:translateX(-50%);
+  opacity:0;
+  animation:investorDrop 1.4s ease-out forwards;
+}
+
+.av-founder{
+  bottom:2%;
+  left:2%;
+  opacity:0;
+  animation:founderDrop 1.4s ease-out forwards;
+  animation-delay:.3s;
+}
+
+.av-manufacturer{
+  bottom:2%;
+  right:2%;
+  opacity:0;
+  animation:manufacturerDrop 1.4s ease-out forwards;
+  animation-delay:.6s;
+}
 
 /* Glow aura behind each avatar */
 .av-aura{
@@ -1073,4 +1093,39 @@ section { position: relative; z-index: 10; }
 
 .hero-stats{
   margin-bottom:0 !important;
+}
+@keyframes investorDrop{
+  from{
+    opacity:0;
+    transform:translateX(-50%) translateY(-120px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes founderDrop{
+  from{
+    opacity:0;
+    transform:translateY(-120px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes manufacturerDrop{
+  from{
+    opacity:0;
+    transform:translateY(-120px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
