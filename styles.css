@@ -22,7 +22,7 @@
   --text-2:      rgba(236,238,245,0.65);
   --text-3:      rgba(236,238,245,0.35);
   --nav-h:       72px;
-  --section-pad: clamp(80px,10vw,140px);
+  --section-pad: clamp(40px,5vw,70px);
   --wrap:        1240px;
   --gutter:      clamp(20px,4vw,52px);
   --r-sm:        8px;
@@ -238,12 +238,17 @@ main{position:relative;z-index:10}
 
 /* Main layout */
 .hero-inner{
-  flex:1;display:grid;
+  flex:1;
+  display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px;align-items:center;
-  max-width:1300px;margin:0 auto;
-  padding:clamp(24px,4vw,60px) var(--gutter) clamp(32px,5vw,72px);
-  width:100%;position:relative;z-index:22;
+  gap:24px;
+  align-items:center;
+  max-width:1300px;
+  margin:0 auto;
+  padding:20px var(--gutter) 20px;
+  width:100%;
+  position:relative;
+  z-index:22;
 }
 
 /* ── LEFT: copy ──────────────────────────────────── */
@@ -425,9 +430,17 @@ main{position:relative;z-index:10}
 
 /* Scroll hint */
 .scroll-hint{
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  padding:20px;pointer-events:none;z-index:22;
-  font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--text-3);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  padding:6px 0;
+  pointer-events:none;
+  z-index:22;
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:.2em;
+  color:var(--text-3);
 }
 .scroll-mouse{width:22px;height:34px;border:1.5px solid rgba(255,255,255,.18);border-radius:11px;display:flex;justify-content:center;padding-top:6px}
 .scroll-wheel{width:3px;height:7px;background:var(--mint);border-radius:2px;animation:wheel 2.2s ease infinite}
@@ -1010,12 +1023,6 @@ img {
 }
 img[src=""] { opacity: 0; }
 
-/* Section spacing — ensure no overlap with nav */
-#hero { padding-top: var(--nav-h); }
-#ecosystem, #avatars, #matchmaking, #network, #cta {
-  padding-top: var(--section-pad);
-}
-
 /* Ensure main content is never hidden behind canvas */
 main { position: relative; z-index: 10; }
 section { position: relative; z-index: 10; }
@@ -1040,4 +1047,30 @@ section { position: relative; z-index: 10; }
   box-shadow: 0 0 20px rgba(0,255,209,.4);
   pointer-events: none;
   z-index: 1;
+}
+#ecosystem{
+  padding-top:40px !important;
+}
+
+#avatars,
+#matchmaking,
+#network,
+#cta{
+  padding-top:60px !important;
+}
+
+.s-head{
+  margin-bottom:30px !important;
+}
+
+.s-title{
+  margin-bottom:10px !important;
+}
+
+.s-sub{
+  margin-bottom:0 !important;
+}
+
+.hero-stats{
+  margin-bottom:0 !important;
 }
